@@ -23,7 +23,7 @@ $xhprof_data = xhprof_disable();
 $xhprof_runs = new XHProfRuns_Default();
 $run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_dockerize");
 ```
-## Setup FireBug
+## Setup FireBug (optional)
 ```
 require_once('/path/to/firephp/FirePHP.class.php');
 // Init firephp
