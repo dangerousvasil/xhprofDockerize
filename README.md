@@ -1,15 +1,28 @@
 ## Setup you xhprof
-set output dir to ./log ini php.ini file 
+Для установки скачать в соответвии с версией пхп
+
 ```
+https://github.com/RustJason/xhprof
+
+cd /root/tmp/pear/cache/xhprof-latest/extension
+phpize
+./configure 
+make
+make install
+```
+
+set output dir to ./log ini php.ini file 
+
+```ini
 [xhprof]
 extension=xhprof.so
-xhprof.output_dir="/path/to/docker/log"
+xhprof.output_dir="/path/to/this/project/log"
 
 ```
 
 ## Setup Application 
 
-```
+```php
 require_once 'xhprof_lib.php';
 require_once 'xhprof_runs.php';
 \xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
@@ -24,7 +37,7 @@ $xhprof_runs = new XHProfRuns_Default();
 $run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_dockerize");
 ```
 ## Setup FireBug (optional)
-```
+```php
 require_once('/path/to/firephp/FirePHP.class.php');
 // Init firephp
 $firephp = FirePHP::getInstance(true);
@@ -42,12 +55,14 @@ docker build -t graphviz .
 
 ## Run docker service
 
-```
+```sh
 docker-compose up
 ```
 
 ## Enjoy service
 
-```
+```http
 http://127.0.0.1:8080/
 ```
+
+
