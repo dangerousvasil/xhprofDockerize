@@ -1,5 +1,5 @@
 ## Setup you xhprof
-Для установки скачать в соответвии с версией пхп
+Для установки скачать ветку в соответвии с версией пхп
 
 ```
 https://github.com/RustJason/xhprof
@@ -47,11 +47,6 @@ $link = "http://127.0.0.1:8080/index.php?run={$run_id}&source=xhprof_dockerize" 
 $firephp->info($link, 'profiling data');
 ```
 
-## Build docker Grapfviz
-
-```
-docker build -t graphviz .
-```
 
 ## Run docker service
 

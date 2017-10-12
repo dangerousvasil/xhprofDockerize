@@ -1,4 +1,4 @@
-FROM php:fpm
+FROM php:7.0-fpm
 
 MAINTAINER Vasilii "79067000905@yandex.ru"
 
@@ -8,7 +8,9 @@ MAINTAINER Vasilii "79067000905@yandex.ru"
 # ENV https_proxy 'http://user:password@proxy-host:proxy-port'
 #
 
+
+
 # Update aptitude with new repo
 # Install other software
-RUN apt-get -y update && apt-get install -y graphviz 
-	
+RUN apt-get -y update && apt-get install -y graphviz
+
